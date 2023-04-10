@@ -7,8 +7,8 @@ import { EditionMetadataWithOwnerOutputSchema } from '@thirdweb-dev/sdk';
 const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
-  const { contract } = useContract('0x2EbeCc654C0b1FadD1f684a0136B23a16a61f554');
-  const { mutateAsync: createCampaign } = useContractWrite(contract, 'createFund');
+  const { contract } = useContract('0x3ea94a25514C50d48dbCC67a58534d25ACDE0B2c');
+  const { mutateAsync: createCampaign } = useContractWrite(contract, 'createCampaign');
 
   const address = useAddress();
   const connect = useMetamask();
@@ -30,7 +30,7 @@ export const StateContextProvider = ({ children }) => {
     }
   }
 
-/*  const getCampaigns = async () => {
+  const getCampaigns = async () => {
     const campaigns = await contract.call('getCampaigns');
 
     const parsedCampaings = campaigns.map((campaign, i) => ({
@@ -75,7 +75,7 @@ export const StateContextProvider = ({ children }) => {
     }
 
     return parsedDonations;
-  } */
+  } 
 
 
   return (
