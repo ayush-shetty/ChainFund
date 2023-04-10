@@ -5,11 +5,9 @@
     "deploy": "npx thirdweb@latest deploy",
     "release": "npx thirdweb@latest release"
   },
-  "devDependencies": {
-    "hardhat": "^2.10.1"
-  },
   "dependencies": {
     "@thirdweb-dev/contracts": "^3",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "hardhat": "^2.13.0"
   }
 }
