@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
-//import "@thirdweb-dev/contracts/extension/ContractMetadata.sol";
-//is ContractMetadata
+import "@thirdweb-dev/contracts/extension/ContractMetadata.sol";
 
-contract CrowdFunding  {
+
+contract CrowdFunding is ContractMetadata {
     struct Campaign {
         address owner;
         string title;
