@@ -75,7 +75,9 @@ export const StateContextProvider = ({ children }) => {
     }
 
     return parsedDonations;
-  }
+
+  } 
+
 
 
   return (

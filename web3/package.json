@@ -6,8 +6,10 @@
     "release": "npx thirdweb@latest release"
   },
   "dependencies": {
-    "@thirdweb-dev/contracts": "^3",
+
+    "@thirdweb-dev/contracts": "^3.4.5",
     "dotenv": "^16.0.3",
     "hardhat": "^2.13.0"
+
   }
 }
