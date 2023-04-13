@@ -31,6 +31,7 @@ export const navlinks = [
   {
     name: 'logout',
     imgUrl: logout,
-    link: '/logout',
+    link: '/',
+    disabled: true,
   },
 ];
