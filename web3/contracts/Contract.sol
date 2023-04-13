@@ -2,9 +2,15 @@
 pragma solidity ^0.8.9;
 
 //import "@thirdweb-dev/contracts/extension/ContractMetadata.sol";
+<<<<<<< Updated upstream
 //is ContractMetadata
 
 contract CrowdFunding  {
+=======
+
+//is ContractMetadata 
+contract CrowdFunding {
+>>>>>>> Stashed changes
     struct Campaign {
         address owner;
         string title;
