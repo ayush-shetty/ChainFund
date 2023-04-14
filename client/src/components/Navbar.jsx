@@ -40,7 +40,7 @@ const Navbar = () => {
         />
         
        
-        <div className="w-[72px] h-full rounded-[20px] bg-[#4acd8d] flex justify-center items-center cursor-pointer " onClick={handleSearch}>
+        <div className="w-[72px] h-full rounded-[20px] bg-[#4fbad3] flex justify-center items-center cursor-pointer " onClick={handleSearch}>
           <img src={search} alt="search" className="w-[15px] h-[15px] object-contain"/>
         </div>
         
@@ -51,18 +51,14 @@ const Navbar = () => {
         <CustomButton 
           btnType="button"
           title={address ? 'Create a campaign' : 'Connect'}
-          styles={address ? 'bg-[#1dc071]' : 'bg-[#8c6dfd]'}
+          styles={address ? 'bg-[#4fbad3]' : 'bg-[#011f4b]'}
           handleClick={() => {
             if(address) navigate('create-campaign')
             else connect()
           }}
         />
 
-        <Link to="/profile">
-          <div className="w-[52px] h-[52px] rounded-full bg-[#2c2f32] flex justify-center items-center cursor-pointer">
-            <img src={thirdweb} alt="user" className="w-[60%] h-[60%] object-contain" />
-          </div>
-        </Link>
+        
       </div>
 
       {/* Small screen navigation */}
@@ -105,8 +101,8 @@ const Navbar = () => {
             <div className="flex mx-4">
             <CustomButton 
               btnType="button"
-              title={address ? 'Create a campaign' : 'Connect'}
-              styles={address ? 'bg-[#1dc071]' : 'bg-[#8c6dfd]'}
+              title={address ? 'Create  campaign' : 'Connect'}
+              styles={address ? 'bg-[#6497b1]' : 'bg-[#8c6dfd]'}
               handleClick={() => {
                 if(address) navigate('create-campaign')
                 else connect();
