@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+/*import React, { useState, useEffect } from "react";
 import { CustomButton, FormField, Loader } from "../components";
 import { useStateContext } from "../context";
 import { loader } from "../assets";
-//import language from "@google-cloud/language";
-//import { Buffer } from 'buffer';
+import language from "@google-cloud/language";
+
 
 const AIsearch = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -32,7 +32,7 @@ const AIsearch = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-  /*  // Initialize the Google Cloud client
+    // Initialize the Google Cloud client
     const client = new language.LanguageServiceClient();
     console.log(who);
 
@@ -82,7 +82,7 @@ const AIsearch = () => {
     });
 
     setSuggestedCampaigns(relevantCampaigns);
-    console.log(suggestedCampaigns);*/
+    console.log(suggestedCampaigns);
   };
 
   return (
@@ -124,6 +124,16 @@ const AIsearch = () => {
 
 }
 
-export default AIsearch
+export default AIsearch */
 
 //set GOOGLE_APPLICATION_CREDENTIALS="C:\Project\ChainFund\decent-micron-383707-d0395c4b3446.json"
+
+import React from 'react'
+
+const AIsearch = () => {
+  return (
+    <div>AIsearch</div>
+  )
+}
+
+export default AIsearch

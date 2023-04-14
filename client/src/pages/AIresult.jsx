@@ -1,4 +1,4 @@
-
+/*
 import { useLocation } from "react-router-dom";
 import { DisplayCampaigns } from "../components";
 
@@ -16,4 +16,14 @@ const AIresult = () => {
   );
 };
 
-export default AIresult;
+export default AIresult;*/
+
+import React from 'react'
+
+const AIresult = () => {
+  return (
+    <div>AIresult</div>
+  )
+}
+
+export default AIresult
