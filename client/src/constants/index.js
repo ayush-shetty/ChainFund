@@ -18,10 +18,9 @@ export const navlinks = [
     disabled: true,
   },
   {
-    name: 'withdraw',
+    name: 'AIsearch',
     imgUrl: withdraw,
-    link: '/',
-    disabled: true,
+    link: '/AIsearch',
   },
   {
     name: 'profile',
