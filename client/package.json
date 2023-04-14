@@ -9,7 +9,6 @@
     "deploy": "yarn build && npx thirdweb@latest upload dist"
   },
   "dependencies": {
-    "@google-cloud/language": "^5.2.2",
     "@thirdweb-dev/react": "^3.9.0",
     "@thirdweb-dev/sdk": "^3.9.0",
     "buffer": "^6.0.3",
@@ -26,5 +25,4 @@
     "tailwindcss": "^3.3.1",
     "vite": "^3"
   }
-
 }

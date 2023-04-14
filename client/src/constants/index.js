@@ -1,4 +1,5 @@
-import { createCampaign, home, logout, payment, profile, withdraw } from '../assets';
+import { createCampaign, home, logout,  profile, AIsearchh } from '../assets';
+import { AIsearch } from '../pages';
 
 export const navlinks = [
   {
@@ -11,15 +12,10 @@ export const navlinks = [
     imgUrl: createCampaign,
     link: '/create-campaign',
   },
-  {
-    name: 'payment',
-    imgUrl: payment,
-    link: '/',
-    disabled: true,
-  },
+
   {
     name: 'AIsearch',
-    imgUrl: withdraw,
+    imgUrl: AIsearchh,
     link: '/AIsearch',
   },
   {
