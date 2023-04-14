@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Sidebar, Navbar} from './components';
-import { CampaignDetails, CreateCampaign, Home, Profile, SearchResults, AIsearch  } from './pages';
+import { CampaignDetails, CreateCampaign, Home, Profile, SearchResults, AIsearch, AIresult  } from './pages';
 
 const App = () => {
   return (
@@ -21,6 +21,7 @@ const App = () => {
           <Route path="/campaign-details/:id" element={<CampaignDetails />} />
           <Route path="/search" element={<SearchResults />} />
           <Route path="/AIsearch" element={<AIsearch />} />
+          <Route path="/AIresult" element={<AIresult />} />
 
         </Routes>
       </div>
