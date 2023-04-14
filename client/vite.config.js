@@ -8,4 +8,11 @@ export default defineConfig({
     global: "globalThis",
     "process.env": {},
   },
+  resolve: {
+    alias: {
+      util: 'util/',
+      buffer: 'buffer/',
+      stream: 'stream/',
+    },
+  },
 });

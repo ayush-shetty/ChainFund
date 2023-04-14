@@ -9,12 +9,15 @@
     "deploy": "yarn build && npx thirdweb@latest upload dist"
   },
   "dependencies": {
+    "@google-cloud/language": "^5.2.2",
     "@thirdweb-dev/react": "^3.9.0",
     "@thirdweb-dev/sdk": "^3.9.0",
+    "buffer": "^6.0.3",
     "ethers": "^5.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.10.0"
+    "react-router-dom": "^6.10.0",
+    "stream": "^0.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^2",

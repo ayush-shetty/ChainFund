@@ -1,4 +1,4 @@
-/*import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { CustomButton, FormField, Loader } from "../components";
 import { useStateContext } from "../context";
 import { loader } from "../assets";
@@ -124,16 +124,6 @@ const AIsearch = () => {
 
 }
 
-export default AIsearch */
+export default AIsearch 
 
 //set GOOGLE_APPLICATION_CREDENTIALS="C:\Project\ChainFund\decent-micron-383707-d0395c4b3446.json"
-
-import React from 'react'
-
-const AIsearch = () => {
-  return (
-    <div>AIsearch</div>
-  )
-}
-
-export default AIsearch
