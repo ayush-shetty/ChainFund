@@ -3,6 +3,7 @@ import { CustomButton, FormField } from "../components";
 import { useStateContext } from "../context";
 import { loader } from "../assets";
 import language from "@google-cloud/language";
+import axios from "axios";
 
 const AIsearch = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +38,7 @@ const AIsearch = () => {
       setIsLoading(true);
   
      
-       const response = await fetch('https://127.0.0.1:8000/analyze/', {
+     /*  const response = await fetch('https://127.0.0.1:8000/analyze/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,10 +49,14 @@ const AIsearch = () => {
         }), 
       });
       const data = await response.json();
+      
+      setSuggestedCampaigns(data);*/
 
+      const result = await axios.get(`http://127.0.0.1:8000/?who=${who}`);
 
+console.log(result);
   
-      setSuggestedCampaigns(data);
+      
       setIsLoading(false);
     };
   return (
@@ -143,3 +148,11 @@ export default AIsearch
 
     return relevant_campaigns
  */
+
+    /* client = language_v1.LanguageServiceClient()
+    document = language_v1.Document(content=who, type_=language_v1.Document.Type.PLAIN_TEXT)
+    response = client.analyze_entities(request={'document': document})
+    entities = [{'name': entity.name, 'type': entity.type_.name} for entity in response.entities]
+    return {"message": f"Hello, {who}!", "entities": entities}
+    
+    who: str*/
