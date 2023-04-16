@@ -2,16 +2,17 @@ import React, { useState, useEffect } from "react";
 import { CustomButton, FormField } from "../components";
 import { useStateContext } from "../context";
 import { loader } from "../assets";
-import language from "@google-cloud/language";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
 
 const AIsearch = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [campaigns, setCampaigns] = useState([]);
   const [who, setWho] = useState("");
-  const [suggestedCampaigns, setSuggestedCampaigns] = useState([]);
+  const [Campaignscategories, setCampaignscategories] = useState([]);
+  const navigate = useNavigate();
  
-
   const { address, contract, getCampaigns } = useStateContext();
 
   const fetchCampaigns = async () => {
@@ -20,6 +21,8 @@ const AIsearch = () => {
     setCampaigns(data);
     setIsLoading(false);
   };
+
+
 
   useEffect(() => {
     if (contract) fetchCampaigns();
@@ -35,28 +38,48 @@ const AIsearch = () => {
     console.log('Who:', who);
     console.log('Who:', campaigns);
 
-      setIsLoading(true);
+    
   
+      const campaignDescriptions = campaigns.map((campaign) => campaign.description);
+
+      if(campaignDescriptions){
+        setIsLoading(true);
+        const Campaignscategories = [];
+
+      for (let i = 0; i < campaignDescriptions.length; i++) {
+        const result = await axios.get(`http://127.0.0.1:8000/?who=${campaignDescriptions[i]}`);
+        Campaignscategories.push(result.data);
+      }
+    
+      setCampaignscategories(Campaignscategories);
      
-     /*  const response = await fetch('https://127.0.0.1:8000/analyze/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          content: who,
-          campaigns: campaigns,
-        }), 
-      });
-      const data = await response.json();
-      
-      setSuggestedCampaigns(data);*/
+
+     console.log("Campaign categories:", Campaignscategories);
+
 
       const result = await axios.get(`http://127.0.0.1:8000/?who=${who}`);
 
-console.log(result);
-  
-      
+      const Usercategories = result.data;
+
+     console.log("User categories:", Usercategories);
+     
+     const threshold = 0.5; // set your desired threshold here
+     const filteredCampaigns = campaigns.filter((campaign) => {
+       const campaignCategories = Campaignscategories[campaigns.indexOf(campaign)];
+       const hasOverlap = campaignCategories.categories && campaignCategories.categories.some((category) => {
+         const matchingCategory = Usercategories.categories.find((userCategory) => userCategory.name === category.name);
+         return matchingCategory && matchingCategory.confidence >= threshold;
+       });
+       return hasOverlap;
+     });
+ 
+     console.log("Filtered campaigns:", filteredCampaigns);
+     navigate('/AIresult', { state: { filteredCampaigns } });
+   }
+ 
+
+   
+
       setIsLoading(false);
     };
   return (
@@ -102,57 +125,3 @@ export default AIsearch
 
 //set GOOGLE_APPLICATION_CREDENTIALS="C:\Project\ChainFund\decent-micron-383707-d0395c4b3446.json"
 
-/*def analyze(request: dict):
-    content = request['content']
-
-    # Instantiates a client
-    client = language_v1.LanguageServiceClient()
-
-    document = language_v1.Document(
-        content=content,
-        type_=language_v1.Document.Type.PLAIN_TEXT
-    )
-
-    # Analyze the user input for entities and categories
-    userInputEntities = client.analyze_entities(
-        document=document
-    ).entities
-
-    userInputCategories = client.classify_text(
-        document=document
-    ).categories
-
-    # Filter the campaigns based on matching entities and categories
-    relevant_campaigns = []
-    for campaign in request['campaigns']:
-        campaignEntities = client.analyze_entities(
-            document=language_v1.Document(
-                content=campaign['description'],
-                type_=language_v1.Document.Type.PLAIN_TEXT
-            )
-        ).entities
-        campaignCategories = client.classify_text(
-            document=language_v1.Document(
-                content=campaign['description'],
-                type_=language_v1.Document.Type.PLAIN_TEXT
-            )
-        ).categories
-
-        matching_entities = [entity for entity in campaignEntities if
-                             any(inputEntity.name == entity.name for inputEntity in userInputEntities)]
-        matching_categories = [category for category in campaignCategories if
-                               any(inputCategory.name == category.name for inputCategory in userInputCategories)]
-
-        if len(matching_entities) > 0 or len(matching_categories) > 0:
-            relevant_campaigns.append(campaign)
-
-    return relevant_campaigns
- */
-
-    /* client = language_v1.LanguageServiceClient()
-    document = language_v1.Document(content=who, type_=language_v1.Document.Type.PLAIN_TEXT)
-    response = client.analyze_entities(request={'document': document})
-    entities = [{'name': entity.name, 'type': entity.type_.name} for entity in response.entities]
-    return {"message": f"Hello, {who}!", "entities": entities}
-    
-    who: str*/

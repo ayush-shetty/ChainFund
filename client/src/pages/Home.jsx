@@ -14,10 +14,12 @@ const Home = () => {
     const data = await getCampaigns();
     setCampaigns(data);
     setIsLoading(false);
+
   }
 
+
   useEffect(() => {
-    if(contract) fetchCampaigns();
+    if(contract) fetchCampaigns(); 
   }, [address, contract]);
 
   return (
