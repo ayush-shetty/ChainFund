@@ -4,6 +4,8 @@ import { useStateContext } from "../context";
 import { loader } from "../assets";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import stringSimilarity from 'string-similarity';
+
 
 
 const AIsearch = () => {
@@ -63,12 +65,19 @@ const AIsearch = () => {
 
      console.log("User categories:", Usercategories);
      
-     const threshold = 0.5; // set your desired threshold here
+     
+     const threshold = 0.3; // set your string threshold here
+     const threshold1 = 0.5; // set your confidence threshold here
+
      const filteredCampaigns = campaigns.filter((campaign) => {
        const campaignCategories = Campaignscategories[campaigns.indexOf(campaign)];
        const hasOverlap = campaignCategories.categories && campaignCategories.categories.some((category) => {
-         const matchingCategory = Usercategories.categories.find((userCategory) => userCategory.name === category.name);
-         return matchingCategory && matchingCategory.confidence >= threshold;
+         const matchingCategory = Usercategories.categories.find((userCategory) => {
+           const similarity = stringSimilarity.compareTwoStrings(userCategory.name, category.name);
+           console.log(similarity);
+           return similarity >= threshold;
+         });
+         return matchingCategory && matchingCategory.confidence >= threshold1;
        });
        return hasOverlap;
      });
