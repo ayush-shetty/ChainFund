@@ -15,4 +15,9 @@ export default defineConfig({
       stream: 'stream/',
     },
   },
+  build: {
+    rollupOptions: {
+      external: ['@safe-globalThis/safe-ethers-adapters',"@safe-globalThis/safe-core-sdk","@safe-globalThis/safe-ethers-lib"],
+    }
+  }
 });
