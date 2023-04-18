@@ -1,6 +1,9 @@
+<p align="center"><img width="250" alt="faviicon" src="https://user-images.githubusercontent.com/124496931/232869863-63114238-d065-4cef-85d2-126336d3d755.png"></p>
+
+
 # ChainFund
 
-Chainfund is a decentralized crowdfunding platform built on React, providing a safe way for users to support fundraising campaigns. The platform runs on a smart contract, and users can donate using Ether through Metamask, with their contributions recorded on the blockchain. The AIsearch feature, powered by Google Cloud NLP, allows users to filter campaigns based on their preferences, and they can also create campaigns with specific goals and deadlines. The project provides a secure and transparent platform for fundraising while leveraging cutting-edge technologies like blockchain and AI while having a user friendly interface.
+ChainFund is a crowdfunding platform built on React that operates on a decentralized web. Its smart contract ensures transparency and trustworthiness by preventing malicious third parties from interfering with the fundraising process. Users can browse and select campaigns, donate using Ether through Metamask, and create their own campaigns with specific deadlines and goals. The platform's AI search feature allows users to describe the campaigns they want to donate to in their own words, and the system will filter the results automatically, making navigation easy and intuitive. The project provides a secure and transparent platform for fundraising while leveraging cutting-edge technologies like blockchain and AI while having a user friendly interface.
 
 ## Deployment
 Clone the project
@@ -9,7 +12,19 @@ Clone the project
 ```
 
 
-Install dependencies in ChainFund,client and web3 directories
+Install dependencies in api directory
+
+```bash
+  pip install
+```
+
+To run the server
+
+```bash
+  python -m uvicorn app:api --reload 
+```
+
+Install dependencies in root, client and web3 directories
 
 ```bash
   npm install
