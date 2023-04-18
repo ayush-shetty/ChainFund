@@ -2,7 +2,7 @@
 pragma solidity ^0.8.9;
 
 
-contract CrowdFunding {
+contract Contract {
     struct Campaign {
         address owner;
         string title;
