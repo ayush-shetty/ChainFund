@@ -11,7 +11,7 @@ import menu from './menu.svg';
 import home from  './home.svg';
 //import money from './money.svg';
 import loader from './loader.svg';
-import thirdweb from './thirdweb.png';
+import thirdweb from './thirdweb.svg';
 
 export {
   tagType,
