@@ -1,7 +1,7 @@
 <p align="center"><img width="250" alt="faviicon" src="https://user-images.githubusercontent.com/124496931/232869863-63114238-d065-4cef-85d2-126336d3d755.png"></p>
 
 
-# ChainFund - A web3 and AI based crowdfunding platform
+# ChainFund: A web3 and AI based crowdfunding platform
 
 ChainFund is a crowdfunding platform built on React that operates on a decentralized web. Its smart contract ensures transparency and trustworthiness by preventing malicious third parties from interfering with the fundraising process. Users can browse and select campaigns, donate using Ether through Metamask, and create their own campaigns with specific deadlines and goals. The platform's AI search feature allows users to describe the campaigns they want to donate to in their own words, and the system will filter the results automatically, making navigation easy and intuitive. This was done using Google Cloud NLP accessed through Fastapi.The project provides a secure and transparent platform for fundraising while leveraging cutting-edge technologies like blockchain and AI while having a user friendly interface.
 
