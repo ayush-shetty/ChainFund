@@ -36,6 +36,6 @@ To run the application from the client directory
   npm run dev 
 ```
 
-## Solving-for-India Hackathon video
+## Website Demo
 [![Watch the video](https://user-images.githubusercontent.com/124496931/233275360-6359dd18-5050-4ba1-8867-c2c083f3330f.jpeg)](https://drive.google.com/file/d/19DpMn3s5R-408GLPrlLeCR08Vbe8fXtY/view?usp=sharing)
 
